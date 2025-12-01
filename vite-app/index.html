@@ -1,12 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Map Users</title>
+    <title>Bitcoin Dashboard</title>
+    <link rel="stylesheet" href="./src/style.css">
   </head>
   <body>
-    <div id="map"></div>
+    <div id="app">
+      <h1>Bitcoin Dashboard 📈</h1>
+
+      <div class="controls">
+        <label>Ilość dni:</label>
+        <input type="number" id="daysInput" value="7" min="1" max="365">
+        <button id="updateBtn">Aktualizuj Wykres</button>
+      </div>
+
+      <div class="chart-container">
+        <canvas id="bitcoinChart"></canvas>
+      </div>
+
+      <hr>
+
+      <h2>Top Inwestorzy (Dane z JSONPlaceholder)</h2>
+      <div class="table-container">
+        <table id="usersTable">
+          <thead>
+            <tr>
+              <th>Imie i Nazwisko</th>
+              <th>Firma</th>
+              <th>Miasto</th>
+              <th>Saldo BTC (Losowe)</th>
+            </tr>
+          </thead>
+          <tbody>
+            </tbody>
+        </table>
+      </div>
+    </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

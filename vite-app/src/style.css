@@ -1,10 +1,74 @@
-npm 
 body {
-  margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  background-color: #f0f2f5;
+  padding: 20px;
+  color: #333;
 }
 
-#map {
-  height: 100vh; 
+.chart-container {
+  position: relative;
+  height: 50vh;
+  width: 90vw;
+  margin: 20px auto;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+input, button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button {
+  background-color: #f7931a; /* Bitcoin Orange */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #e6830d;
+}
+.table-container {
+  width: 90vw;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+table {
   width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #333;
+  color: white;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+td:last-child {
+  font-weight: bold;
+  color: #27ae60;
 }
