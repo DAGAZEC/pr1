@@ -1,4 +1,40 @@
-<meta charset="UTF-8">
-<h1>Lista Zadań</h1> 
-<button id="load-tasks">Załaduj z API</button> 
-<ul id="task-list"></ul 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Tracker</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Crypto Tracker (PLN)</h1>
+
+      <div class="calculator" style="margin-bottom: 20px; padding: 10px; border: 1px solid #ddd;">
+        <h3>Kalkulator BTC</h3>
+        <input type="number" id="plnInput" placeholder="Kwota w PLN (np. 5000)">
+        <p id="calcResult" style="font-weight: bold; margin-top: 10px;">To jest: 0 BTC</p>
+      </div>
+
+      <div class="chart-container" style="height: 300px; margin-bottom: 20px;">
+        <canvas id="cryptoChart"></canvas>
+      </div>
+
+      <div class="table-container">
+        <button id="sortBtn" style="margin-bottom: 10px; cursor: pointer;">Sortuj po cenie ↕</button>
+        <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: left; border-collapse: collapse;">
+          <thead>
+            <tr style="background: #f4f4f4;">
+              <th>Nazwa</th>
+              <th>Cena (PLN)</th>
+              <th>Zmiana 24h</th>
+            </tr>
+          </thead>
+          <tbody id="cryptoTableBody">
+            </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
