@@ -3,30 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Crypto Tracker</title>
+    <title>Crypto Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="app">
-      <h1>Crypto Tracker (PLN)</h1>
+      <header>
+        <h1>Market Overview</h1>
+        <div class="user-profile">
+          <span>Public API Data</span>
+          <div class="avatar">API</div>
+        </div>
+      </header>
 
-      <div class="calculator" style="margin-bottom: 20px; padding: 10px; border: 1px solid #ddd;">
-        <h3>Kalkulator BTC</h3>
-        <input type="number" id="plnInput" placeholder="Kwota w PLN (np. 5000)">
-        <p id="calcResult" style="font-weight: bold; margin-top: 10px;">To jest: 0 BTC</p>
+      <div class="top-row">
+        <div class="card calculator-card">
+          <h3>🧮 Kalkulator BTC</h3>
+          <div class="calc-wrapper">
+            <input type="number" id="plnInput" placeholder="Wpisz kwotę PLN...">
+            <div class="result" id="calcResult">0.000000 BTC</div>
+          </div>
+          <p class="subtext">Przelicznik aktualny dla ceny rynkowej</p>
+        </div>
+        
+        <div class="card market-stats-card">
+          <h3>Market Status</h3>
+          <div class="stat-row">
+            <span>Top Coin:</span> <strong>Bitcoin</strong>
+          </div>
+          <div class="stat-row">
+            <span>Data Source:</span> <strong style="color:#3b82f6">CoinGecko</strong>
+          </div>
+          <p class="subtext">Real-time market capitalization data</p>
+        </div>
       </div>
 
-      <div class="chart-container" style="height: 300px; margin-bottom: 20px;">
-        <canvas id="cryptoChart"></canvas>
+      <div class="charts-grid">
+        <div class="card doughnut-card">
+           <h3>Top 5 Market Cap Distribution</h3>
+           <div class="doughnut-wrapper">
+             <canvas id="doughnutChart"></canvas>
+           </div>
+        </div>
+
+        <div class="card line-chart-card">
+          <div class="chart-header">
+            <h2>Price Trend (7d Simulation)</h2>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="cryptoChart"></canvas>
+          </div>
+        </div>
       </div>
 
-      <div class="table-container">
-        <button id="sortBtn" style="margin-bottom: 10px; cursor: pointer;">Sortuj po cenie ↕</button>
-        <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: left; border-collapse: collapse;">
+      <div class="card table-section">
+        <div class="table-header">
+          <h2>Top Currencies List</h2>
+        </div>
+        <table>
           <thead>
-            <tr style="background: #f4f4f4;">
-              <th>Nazwa</th>
-              <th>Cena (PLN)</th>
-              <th>Zmiana 24h</th>
+            <tr>
+              <th>#</th>
+              <th>Coin</th>
+              <th id="sortPriceBtn" class="sortable">Price (PLN) <span class="sort-icon">⇅</span></th>
+              <th>24h Change</th>
+              <th>Market Cap</th>
             </tr>
           </thead>
           <tbody id="cryptoTableBody">
